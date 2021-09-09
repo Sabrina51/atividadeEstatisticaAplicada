@@ -15,7 +15,7 @@ function adicionar() {
     } else {
         var numero = Number(domElementoConjuntoNumero.value)
         conjuntoNumero.push(numero)
-        domConjunto.innerHTML = `{${conjuntoNumero}}`
+        domConjunto.innerHTML = `<strong>{${conjuntoNumero}}</strong>`
     }
     domElementoConjuntoNumero.value = ''
     domElementoConjuntoNumero.focus();
@@ -33,7 +33,7 @@ function calcular() {
         domResultados.innerHTML +=`<p>O conjunto tem ${quantidadeNumero} numeros</p>`
 
         //PONDO OS VALORES EM ORDEM CRESCENTE "ROL"
-        var crescente = conjuntoNumero.sort((a, b) => a - b)
+        var crescente = conjuntoNumero.sort()
         domResultados.innerHTML +=`<p>Em ROL {${crescente}}</p>`
 
         //SOMANDO DOS VALORES DO VETOR
