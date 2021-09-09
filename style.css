@@ -29,24 +29,35 @@ p{
     margin: 10px;
 }
 
-#resultadosCalculados{
-    width: 500px;
-    margin: auto;
+#label-valores{
+    font-size: 18px;
 }
 
-#adicionarValores{
-    text-align: center;
-}
 #conjunto_numeros{
     width: 70px;
 }
 
-#botaoCalcular{
-    margin-left: 445px;
-}
-
 #conjunto{
-    margin: 15px;
-
+    text-align: center;
 }
 
+#wrapper-conjunto{
+    display: flex;
+    align-items: center;
+    padding: 10px 0 20px 60px;
+}
+
+#wrapper-conjunto input:nth-child(n){
+    margin-left: 5px;
+}
+
+#resultados{
+    margin: 20px 50px 0 50px;
+    color: mintcream;
+    background-color: rgba(35, 85, 58, 0.555);
+    border-radius: 5px;
+}
+
+#wrapper-button{
+    margin-left: 340px;
+}
