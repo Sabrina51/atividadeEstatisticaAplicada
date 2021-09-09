@@ -15,17 +15,25 @@
         <p>Atividade - Estatística Aplicada</p>
     </header>
     <section>
-        <article id="adicionarValores">
-            <label for="valores">Digite os números a serem adicionados ao conjunto: </label>
-            <input id="conjunto_numeros" type="number" name="valores">
-            <input type="button" value="Adicionar" onclick="adicionar()">
-            <div id="conjunto"></div>
-            <hr></hr>
+        <article>
+            <div id="wrapper-conjunto">
+                <label id="label-valores" for="valores">Digite os números a serem adicionados ao conjunto:</label>
+                <input id="conjunto_numeros" type="number" name="valores">
+                <input type="button" value="Adicionar" onclick="adicionar()" class="btn btn-success btn-sm">
+            </div>
+            <div>
+                <div id="conjunto"></div>
+            </div>
         </article>
-        <article id="resultadosCalculados">
+        <hr></hr>
+        <article>
             <div id="resultados"></div>
-            <input id="botaoCalcular" type="button" value="Calcular" onclick="calcular()">
-            <!-- <input id="botaoLimpar" type="button" value="Limpar" onclick="limpar()"> -->
+            <div id="wrapper-button" >
+                <input id="botaoLimparTudo" type="button" value="Limpar Tudo" onclick="limpar()" class="btn btn-secondary btn-sm">
+                <input id="botaoLimparConjunto" type="button" value="Limpar Conjunto" onclick="limpar_conjunto()" class="btn btn-secondary btn-sm">
+                <input id="botaoCalcular" type="button" value="Calcular" onclick="calcular()" class="btn btn-success btn-sm">
+            </div>
+            
         </article>
     </section>
 
