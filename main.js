@@ -18,7 +18,7 @@ document.addEventListener('keypress', function (e) {
 })
 
 function adicionar() {
-    if (domElementoConjuntoNumero.value < 0 || domElementoConjuntoNumero.value > 9999 || domElementoConjuntoNumero.value === "") {
+    if (domElementoConjuntoNumero.value > 9999 || domElementoConjuntoNumero.value === "") {
         alert('[ERRO] Caixa em branco ou número inválido!')
     } else {
         var numero = Number(domElementoConjuntoNumero.value)
