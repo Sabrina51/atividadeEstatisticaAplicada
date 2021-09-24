@@ -9,7 +9,6 @@ var domResultados = document.querySelector('#resultados')
 var domConjunto = document.getElementById('conjunto')
 var conjuntoNumero = []
 
-
 document.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         var botaoAdicionar = document.getElementById("adicionar")
@@ -70,14 +69,31 @@ function calcular() {
             domResultados.innerHTML += `<p>A mediana é ${medianaPar}</p>`
         }
 
-        var moda = mode(conjuntoNumero)
-        function mode(arr) {
-            return arr.sort((a, b) =>
-                arr.filter(v => v === a).length
-              - arr.filter(v => v === b).length
-            ).pop();
+        function calcularModa(valores) {
+            const [repeticiones, moda] = valores.reduce((acc, val) => {
+                    const nn = contar(valores, val);
+                    if (nn === acc[0] && acc[1].every((item) => item !== val)) {
+                        acc[1].push(val);
+                    } else if (nn > acc[0]) {
+                        acc = [nn, [val]];
+                    }
+                    return acc;
+                },
+                [0, []]
+            );
+
+            return {
+                repeticiones,
+                moda
+            };
         }
-        domResultados.innerHTML +=`<p>A MODA é ${moda}</p>`
+
+        function contar(arrayElmentos, valorAContar) {
+            return arrayElmentos.filter((elemento) => elemento === valorAContar).length;
+        }
+  
+        let testModa = calcularModa(conjuntoNumero)
+        domResultados.innerHTML +=`<p>A MODA é ${testModa.moda}</p>`
     }
 }
 
